@@ -5,6 +5,8 @@ build/
 tmp/
 temp/
 
+/src/database/credentials.js
+
 # Logs
 logs
 *.log

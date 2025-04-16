@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn  } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany  } from 'typeorm';
+import { Watchlist } from './Watchlist'; 
 
 /*Responsabilidade: Define os modelos que representam as tabelas do banco de dados, 
 aqui usando o TypeORM
@@ -13,15 +14,20 @@ que mapeia a classe para uma tabela real do banco
 */
 
 @Entity('Usuarios')
-class User {
+export class User {
     @PrimaryGeneratedColumn('increment')
     id: number;
 
     @Column('varchar', { length: 100, nullable: false })
     Nome: string;
 
-    @Column('varchar', { length: 100, nullable: false })
+    @Column('varchar', { length: 100, nullable: false, unique:true })
     email: string;
-}
 
-export default User;
+    //mesmo sem o varchar o typeORM cria como varchar
+    @Column({ length: 100, nullable: false })
+    senha: string;
+
+    @OneToMany(() => Watchlist, (watchlist) => watchlist.user)
+    watchlists: Watchlist[];
+}

@@ -2,3 +2,8 @@ npm install express cors express-async-errors
 npm install @types/express @types/cors ts-node-dev -d
 npm run typeorm migration:create src/database/migrations/CreateUsersTable
 npm run typeorm -- -d ./src/database/data-source.ts migration:run
+
+//gerar a migrate com create eh ruim, melhor fazer assim:
+
+npm run typeorm migration:generate -- -d src/database/data-source.ts src/database/migrations/CreateInitialSchema
+npm run typeorm migration:run -- -d src/database/data-source.ts

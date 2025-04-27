@@ -2,7 +2,7 @@ import { IAcao } from "./iAcoes";
 
 export interface IAcao_Preco {
   id?: number;
-  Data: Date; // ou Date, dependendo de como você trabalha com datas
+  Data: string | Date; // aceita stringo ou data
   Abertura: number;
   Alta: number;
   Baixa: number;

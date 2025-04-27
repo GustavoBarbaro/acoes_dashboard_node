@@ -1,7 +1,7 @@
 import { Request, Response, Router } from 'express';
-import User from '../entities/User';
+// import User from '../entities/User';
 import UserRepository from '../repositories/UserRepository';
-import IUser from '../interfaces/iUser';
+// import IUser from '../interfaces/iUser';
 
 /*consome os metodos de CRUD de repositories
 

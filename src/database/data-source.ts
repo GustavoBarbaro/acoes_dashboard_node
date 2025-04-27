@@ -3,8 +3,6 @@ import { DataSource } from "typeorm"
 
 import { username, password } from './credentials'
 
-//registrar a migration
-// import { CreateUsersTable1744309855154 } from './migrations/1744309855154-CreateUsersTable';
 
 //mostrar pro typeORM que tem mais uma entidade que ele precisa mapear
 import { User } from '../app/entities/User'
@@ -31,8 +29,6 @@ export const AppDataSource = new DataSource({
 })
 
 
-
-//caso fique com muitas migrations, da pra criar um objeto por fora e importar esse objeto
 
 /*
 

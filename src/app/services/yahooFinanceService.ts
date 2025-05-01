@@ -8,6 +8,11 @@ export class YahooFinanceService {
                 ticker: quote.symbol,
                 nome: quote.shortName,
                 precoAtual: quote.regularMarketPrice,
+                precoAbertura: quote.regularMarketOpen,
+                precoMaximo: quote.regularMarketDayHigh,
+                precoMinimo: quote.regularMarketDayLow,
+                precoFechamento: quote.regularMarketPreviousClose,
+                volume: quote.regularMarketVolume,
                 variacaoPercentual: quote.regularMarketChangePercent?.toFixed(2),
                 ultimaAtualizacao: typeof quote.regularMarketTime === 'number'
                     ? new Date(quote.regularMarketTime * 1000)
